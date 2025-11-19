@@ -1,0 +1,78 @@
+h2 {
+    font-family: new-spirit-condensed;
+    color: #365E41;
+}
+h3 {
+    font-family: new-spirit-condensed;
+    color: #365E41;
+}
+p {
+    font-family: 'Courier New', Courier, monospace;
+}
+ul {
+    font-family:'Courier New', Courier, monospace;
+}
+a {
+    color: #365E41;  
+}
+label {
+    font-family: new-spirit-condensed;
+    color: #365E41;
+}
+button {
+    background-color: #365E41;
+    color: white;
+    border-radius: 5px;
+    font-family: 'Courier New', Courier, monospace;
+    cursor: pointer;
+}
+.green-text {
+    color: #365E41;
+    font-family: new-spirit-condensed;
+    font-weight: bold;
+}
+.marquee {
+    width: 100%; 
+    border-width: 7px 0px;
+    border-style: solid;
+    border-color: #365E41;
+    display: flex;
+    overflow: hidden;
+    white-space: nowrap;
+    background-color: white;
+    color: #365E41;
+    font-size: 50px;
+}
+.marquee-scroll {
+    animation-duration: 20s ;
+	animation-iteration-count: infinite ;
+	animation-name: marquee-content ;
+	animation-timing-function: linear ;
+	padding: 0px 10px 0px 10px ;
+    margin: 20px 0;
+    font-family: new-spirit-condensed,times;
+}
+.tree-report {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 3px solid #365E41;
+}
+.dropdown-menu {
+    max-width: 200px;
+}
+
+@keyframes marquee-content {
+	from {
+		transform: translateX( 0% );
+	}
+	to {
+		transform: translateX( -100% );
+		}
+}
+@font-face {
+  font-family: new-spirit-condensed; 
+  src: url(new-spirit-condensed.otf); 
+    }
