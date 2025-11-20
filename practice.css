@@ -107,6 +107,7 @@ header a {
 }
 #header-title {
     padding: 0px;
+    margin: 0px;
 }
 #header-nav {
     width: auto;
