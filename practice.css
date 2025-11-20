@@ -82,7 +82,7 @@ button {
     border-radius: 3px;
     border-color: #365E41;
 }
-.background-image {
+#background-image-index {
     max-width:100%;
     height:762px;
     background-image:url(tree.png);
