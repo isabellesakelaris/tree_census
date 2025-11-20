@@ -69,7 +69,7 @@ button {
 	animation-name: marquee-content ;
 	animation-timing-function: linear ;
 	padding: 0 1em 0 1em ;
-    margin: 1em 0;
+    margin: 1rem 0;
     font-family: new-spirit-condensed,Times, Serif;
 }
 .tree-report {
