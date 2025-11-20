@@ -64,6 +64,11 @@ button {
     max-width: 200px;
 }
 
+#header-title {
+    float:left;
+    width:70%;
+}
+
 @keyframes marquee-content {
 	from {
 		transform: translateX( 0% );
