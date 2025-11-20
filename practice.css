@@ -76,7 +76,7 @@ button {
     max-width: 200px;
 }
 
-.border {
+.divider {
     clear:both;
     border:solid;
     border-radius: 3px;
