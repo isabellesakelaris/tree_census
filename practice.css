@@ -75,6 +75,10 @@ button {
 header{
     display: flex;
 }
+
+header a {
+    text-decoration: none;
+}
 #header-title {
     float:left;
     width:70%;
