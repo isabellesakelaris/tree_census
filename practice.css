@@ -74,12 +74,10 @@ header{
 #header-nav {
     float:right;
     width:40%;
-    display: flex;
 }
 .header-nav-links {
     width:25%;
     float:left;
-    display: inline-block;
 }
 @keyframes marquee-content {
 	from {
