@@ -90,6 +90,12 @@ button {
     background-size: cover;
     background-position: center;
     padding: 30px;
+    position: relative;
+    z-index:-1;
+}
+#text-box {
+    position: relative;
+    z-index: 1;
 }
 /*header formatting*/
 header{
