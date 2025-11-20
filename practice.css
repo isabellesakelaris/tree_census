@@ -80,11 +80,10 @@ header a {
     text-decoration: none;
 }
 #header-title {
-    float:left;
+
     width:70%;
 }
 #header-nav {
-    float:right;
     width:50%;
 }
 .header-nav-links {
