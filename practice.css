@@ -87,7 +87,7 @@ header a {
     text-decoration: none;
 }
 #header-title {
-
+    padding: 0px;
 }
 #header-nav {
     width: auto;
