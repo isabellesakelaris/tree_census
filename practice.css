@@ -64,6 +64,21 @@ button {
     max-width: 200px;
 }
 
+header{
+    display: flex;
+}
+#header-title {
+    float:left;
+    width:70%;
+}
+#header-nav {
+    float:right;
+    width:40%;
+}
+.header-nav-links {
+    width:25%;
+    float:left;
+}
 @keyframes marquee-content {
 	from {
 		transform: translateX( 0% );
