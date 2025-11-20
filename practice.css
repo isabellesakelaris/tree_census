@@ -23,6 +23,7 @@ h3 {
     font-family: new-spirit-condensed;
     color: #365E41;
 }
+
 p {
     font-family: 'Courier New', Courier, monospace;
 }
@@ -110,6 +111,14 @@ button {
     background-color:white;
     border:solid;
     border-radius:3px;
+    border-color:#365E41;
+}
+
+.text-box p {
+    padding-left:14px;
+    padding-right:14px;
+    border:solid;
+    border-radius:1px;
     border-color:#365E41;
 }
 /*header formatting*/
