@@ -112,7 +112,7 @@ header a {
 #header-nav {
     width: auto;
     float: center;
-    padding: 0px;
+    padding-top: 10px;
     margin: 0px;
 }
 
