@@ -64,15 +64,18 @@ button {
     max-width: 200px;
 }
 
+header{
+    display: flex;
+}
 #header-title {
     float:left;
     width:70%;
-    display: inline-block
+    display: flex;
 }
 #header-nav {
     float:right;
     width:40%;
-    display: inline-block;
+    display: flex;
 }
 .header-nav-links {
     width:25%;
