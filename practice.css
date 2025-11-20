@@ -2,7 +2,7 @@ body {
     padding-top: 50px;
 }
 h1 {
-    font-family: 'New Spirit', Times, Serif;
+    font-family: new-spirit-condensed, Times, Serif;
     font-size: 50px;
     line-height: 24px;
     letter-spacing: 0;
@@ -12,7 +12,7 @@ h1 {
 }
 h2 {
     text-align:left;
-    font-family: 'New Spirit', Times, Serif;
+    font-family: new-spirit-condensed, Times, Serif;
     font-size:24px;
     line-height:24px;
     padding-left:14px;
@@ -20,7 +20,7 @@ h2 {
 }
 
 h3 {
-    font-family: new-spirit-condensed;
+    font-family: new-spirit-condensed, Times, Serif;
     color: #365E41;
 }
 
@@ -34,19 +34,19 @@ a {
     color: #365E41;  
 }
 label {
-    font-family: new-spirit-condensed;
+    font-family: new-spirit-condensed, Times, Serif;
     color: #365E41;
 }
 button {
     background-color: #365E41;
-    color: white;
+    color: #fffcf0;
     border-radius: 5px;
     font-family: 'Courier New', Courier, monospace;
     cursor: pointer;
 }
 .green-text {
     color: #365E41;
-    font-family: new-spirit-condensed;
+    font-family: new-spirit-condensed, Times, Serif;
     font-weight: bold;
 }
 .marquee {
@@ -57,7 +57,7 @@ button {
     display: flex;
     overflow: hidden;
     white-space: nowrap;
-    background-color: white;
+    background-color: fffcf0;
     color: #365E41;
     font-size: 50px;
 }
@@ -68,7 +68,7 @@ button {
 	animation-timing-function: linear ;
 	padding: 0px 10px 0px 10px ;
     margin: 20px 0;
-    font-family: new-spirit-condensed,times;
+    font-family: new-spirit-condensed,Times, Serif;
 }
 .tree-report {
     width: 50%;
@@ -79,7 +79,7 @@ button {
     border: 3px solid #365E41;
 }
 .tree-report h2 {
-    font-family: new-spirit-condensed;
+    font-family: new-spirit-condensed, Times, Serif;
     color: #365E41;
 }
 
@@ -108,7 +108,7 @@ button {
     margin:0 auto;
     width:900px;
     height:306px;
-    background-color:white;
+    background-color:#fffcf0;
     border:solid;
     border-radius:3px;
     border-color:#365E41;
@@ -125,7 +125,7 @@ button {
 header{
     position: sticky;
     top: 0;
-    background: white;
+    background: #fffcf0;
     padding: 50px;
     clear:both;
     border-bottom:solid;
