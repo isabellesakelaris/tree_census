@@ -67,6 +67,7 @@ button {
 #header-title {
     float:left;
     width:70%;
+    display: inline-block
 }
 #header-nav {
     float:right;
