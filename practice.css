@@ -8,7 +8,7 @@ h1 {
     letter-spacing: 0;
     text-align: center;
     color:#365E41;
-    padding-top: 0px:
+    padding-top: 0px;
 }
 h2 {
     text-align:left;
@@ -142,7 +142,6 @@ header a {
 }
 #header-nav {
     width: auto;
-    float: center;
     padding-top: 10px;
     margin: 0px;
 }
