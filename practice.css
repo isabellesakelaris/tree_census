@@ -89,6 +89,7 @@ button {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    padding: 30px;
 }
 /*header formatting*/
 header{
