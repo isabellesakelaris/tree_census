@@ -90,12 +90,17 @@ button {
     background-size: cover;
     background-position: center;
     padding: 30px;
-    position: relative;
-    z-index:-1;
 }
-#text-box {
-    position: relative;
-    z-index: 1;
+.text-box {
+    padding-left:14px;
+    padding-right:14px;
+    margin:0 auto;
+    width:900px;
+    height:306px;
+    background-color:white;
+    border:solid;
+    border-radius:3px;
+    border-color:#365E41;
 }
 /*header formatting*/
 header{
