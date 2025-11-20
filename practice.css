@@ -82,7 +82,7 @@ header a {
 
 }
 #header-nav {
-    width: 70%;
+    width: auto;
     float: center;
 }
 .header-nav-links {
