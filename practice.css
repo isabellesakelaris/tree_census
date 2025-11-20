@@ -68,7 +68,10 @@ button {
     float:left;
     width:70%;
 }
-
+#header-nav {
+    float:right;
+    width:40%
+}
 @keyframes marquee-content {
 	from {
 		transform: translateX( 0% );
