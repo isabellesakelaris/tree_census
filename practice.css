@@ -77,6 +77,7 @@ button {
 .header-nav-links {
     width:25%;
     float:left;
+    display: inline-block;
 }
 @keyframes marquee-content {
 	from {
