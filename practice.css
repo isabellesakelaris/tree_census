@@ -77,6 +77,10 @@ header{
     top: 0;
     background: white;
     padding: 50px;
+    clear:both;
+    border:solid;
+    border-radius: 3px;
+    border-color: #365E41;
 }
 
 header a {
