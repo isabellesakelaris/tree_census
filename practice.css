@@ -1,9 +1,11 @@
-body {
-    padding-top: 50px;
+body, html {
+    margin: 0;
+    padding: 0;
 }
+
 h1 {
-    font-family: 'New Spirit', Times, Serif;
-    font-size: 50px;
+    font-family: new-spirit-condensed, Times, Serif;
+    font-size: 5vw;
     line-height: 24px;
     letter-spacing: 0;
     text-align: center;
@@ -12,7 +14,7 @@ h1 {
 }
 h2 {
     text-align:left;
-    font-family: 'New Spirit', Times, Serif;
+    font-family: new-spirit-condensed, Times, Serif;
     font-size:24px;
     line-height:24px;
     padding-left:14px;
@@ -20,7 +22,7 @@ h2 {
 }
 
 h3 {
-    font-family: new-spirit-condensed;
+    font-family: new-spirit-condensed, Times, Serif;
     color: #365E41;
 }
 
@@ -34,41 +36,41 @@ a {
     color: #365E41;  
 }
 label {
-    font-family: new-spirit-condensed;
+    font-family: new-spirit-condensed, Times, Serif;
     color: #365E41;
 }
 button {
     background-color: #365E41;
-    color: white;
+    color: #fffcf0;
     border-radius: 5px;
     font-family: 'Courier New', Courier, monospace;
     cursor: pointer;
 }
 .green-text {
     color: #365E41;
-    font-family: new-spirit-condensed;
+    font-family: new-spirit-condensed, Times, Serif;
     font-weight: bold;
 }
 .marquee {
     width: 100%; 
-    border-width: 7px 0px;
+    border-width: 7px 0;
     border-style: solid;
     border-color: #365E41;
     display: flex;
     overflow: hidden;
     white-space: nowrap;
-    background-color: white;
+    background-color: fffcf0;
     color: #365E41;
-    font-size: 50px;
+    font-size: 3em;
 }
 .marquee-scroll {
     animation-duration: 20s ;
 	animation-iteration-count: infinite ;
 	animation-name: marquee-content ;
 	animation-timing-function: linear ;
-	padding: 0px 10px 0px 10px ;
-    margin: 20px 0;
-    font-family: new-spirit-condensed,times;
+	padding: 0 1em 0 1em ;
+    margin: 1rem 0;
+    font-family: new-spirit-condensed,Times, Serif;
 }
 .tree-report {
     width: 50%;
@@ -79,7 +81,7 @@ button {
     border: 3px solid #365E41;
 }
 .tree-report h2 {
-    font-family: new-spirit-condensed;
+    font-family: new-spirit-condensed, Times, Serif;
     color: #365E41;
 }
 
@@ -108,7 +110,7 @@ button {
     margin:0 auto;
     width:900px;
     height:306px;
-    background-color:white;
+    background-color:#fffcf0;
     border:solid;
     border-radius:3px;
     border-color:#365E41;
@@ -125,8 +127,9 @@ button {
 header{
     position: sticky;
     top: 0;
-    background: white;
+    background: #fffcf0;
     padding: 50px;
+    margin: 0px;
     clear:both;
     border-bottom:solid;
     border-radius: 3px;
