@@ -70,7 +70,8 @@ button {
 }
 #header-nav {
     float:right;
-    width:40%
+    width:40%;
+    display: inline-block;
 }
 .header-nav-links {
     width:25%;
