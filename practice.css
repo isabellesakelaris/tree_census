@@ -133,6 +133,7 @@ button {
     border:solid 1px #365E41;
     border-radius:3px;
     box-sizing: border-box; 
+    margin: 10px;
 }
 
 .text-box p {
