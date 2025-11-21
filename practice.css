@@ -74,6 +74,7 @@ button {
     margin: 1rem 0;
     font-family: new-spirit-condensed,Times, Serif;
 }
+/* neighborhood tree report formatting */
 .tree-report {
     width: 50%;
     margin-left: auto;
@@ -105,7 +106,7 @@ button {
 .dropdown-menu {
     max-width: 200px;
 }
-
+/* end neighborhood tree report formatting*/
 .divider {
     clear:both;
     border:solid;
@@ -120,7 +121,7 @@ button {
     background-size: cover;
     background-position: center;
     padding: 30px;
-    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
