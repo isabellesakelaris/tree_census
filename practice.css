@@ -87,6 +87,20 @@ button {
     font-family: new-spirit-condensed, Times, Serif;
     color: #365E41;
 }
+#results h3 {
+    margin: 0 0 0.5em 0;
+    padding: 0;
+}
+
+#tree-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#tree-list li {
+    padding-left: 0;
+}
 
 .dropdown-menu {
     max-width: 200px;
