@@ -64,6 +64,7 @@ button {
     background-color: #fffcf0;
     color: #365E41;
     font-size: 3em;
+    bottom: 0;
 }
 .marquee-scroll {
     animation-duration: 20s ;
