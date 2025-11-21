@@ -78,7 +78,7 @@
                 alert("Please select a neighborhood!");
                 return;
             }
-            results.innerHTML =`<br><h3>Top 20 trees in ${neighborhood}:</h3>`;
+            results.innerHTML =`<br><h3>Top 20 most common tree species in ${neighborhood}:</h3>`;
             
             const url = `https://data.cityofnewyork.us/resource/uvpi-gqnh.json?$select=spc_common,count(*) as quantity&$where=nta_name='${neighborhood}'&$group=spc_common&$order=quantity DESC&$limit=20&$$app_token=${APP_TOKEN}`;
 
