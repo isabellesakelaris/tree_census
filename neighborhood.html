@@ -5,6 +5,117 @@
     <title>Neighborhood Tree Report</title>
     <link rel=stylesheet type=text/css href=practice.css>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        const APP_TOKEN = "EuUJxbkjULlp0gbbri4FLO9hK";
+        // Neighborhood dropdown menu for tree-report
+        async function loadNeighborhoodDropdown() {
+            const dropdown = document.getElementById('neighborhood');
+            dropdown.innerHTML = "<option>Loading...</option>";
+
+            const url = `https://data.cityofnewyork.us/resource/uvpi-gqnh.json?$select=distinct nta_name&$order=nta_name&$$app_token=${APP_TOKEN}`;
+
+            try {
+            const response = await fetch(url);
+            const json = await response.json();
+
+            dropdown.innerHTML = "<option value=''>Select a Neighborhood</option>";
+
+            json.forEach(row => {
+                const neighborhood = row.nta_name;
+                if (neighborhood) {
+                const option = document.createElement('option');
+                option.value = neighborhood;
+                option.textContent = neighborhood;
+                dropdown.appendChild(option);
+                }
+            });
+        } catch (err) {
+        console.error("Error loading neighborhoods:", err);
+        dropdown.innerHTML = "<option>Error fetching neighborhood data. Sorry, we're stumped!</option>";
+        }
+        }
+        // Fetch total number of trees per neighborhood
+        async function fetchTreeCount (neighborhood) {
+            const totalResult = document.getElementById('tree-count');
+            totalResult.innerHTML ="";
+
+            const url2015 = `https://data.cityofnewyork.us/resource/uvpi-gqnh.json?$select=count(tree_id) as total2015&$where=nta_name='${neighborhood}'&$$app_token=${APP_TOKEN}`;
+            const url2005 = `https://data.cityofnewyork.us/resource/29bw-z7pj.json?$select=count(tree_dbh) as total2005&$where=nta_name='${neighborhood}'&$$app_token=${APP_TOKEN}`;
+            try {
+            const [response2015, response2005] = await Promise.all([
+                fetch(url2015), fetch(url2005)
+            ]);
+            const json2015 = await response2015.json();
+            const json2005 = await response2005.json();
+                
+            const total2015 = json2015?.[0]?.total2015 || 0;
+            const total2005 = json2005?.[0]?.total2005 || 0;
+                
+            //Calculate change in # of trees
+            const change = total2015 - total2005;
+
+            totalResult.innerHTML = `<h3>Total tree count in ${neighborhood}:</h3>
+            <span class="green-text">2015 Census:</span> ${total2015}
+            <span class="green-text">2005 Census:</span> ${total2005}<br>
+            <span class="green-text">Change over time:</span> ${change} trees`;
+
+            } catch (err) {
+                console.error("Error fetching data:", err);
+                totalResult.innerHTML = "Error fetching total tree count. We can't be-leaf it either!";
+            }
+        }
+        // Fetch top 20 trees per neighborhood
+        async function fetchTreeReport() {
+            const dropdown = document.getElementById('neighborhood');
+            const neighborhood = dropdown.value.trim();
+            const results = document.getElementById('results');
+            const totalResults = document.getElementById('tree-count');
+            results.innerHTML = "";
+            totalResults.innerHTML = "";
+
+            if (!neighborhood) {
+                alert("Please select a neighborhood!");
+                return;
+            }
+
+            const url = `https://data.cityofnewyork.us/resource/uvpi-gqnh.json?$select=spc_common,count(*) as quantity&$where=nta_name='${neighborhood}'&$group=spc_common&$order=quantity DESC&$limit=20&$$app_token=${APP_TOKEN}`;
+
+            try {
+            const response = await fetch(url);
+            const json = await response.json();
+
+            const nonzeroTrees = json.filter(row => row.spc_common && row.spc_common.toLowerCase() !== "unknown");
+
+            if (!nonzeroTrees.length) {
+                results.innerHTML = "<li>No results found.</li>";
+                return;
+            } else {
+            nonzeroTrees.forEach(row => {
+                const li = document.createElement('li');
+                li.textContent = `${row.spc_common}: ${row.quantity}`;
+                results.appendChild(li);
+            });
+            } fetchTreeCount(neighborhood);
+        } catch (err) {
+            console.error("Fetch error:", err);
+            results.innerHTML = "<li>Error fetching data. Sorry, we're stumped!</li>";
+            }
+        }
+        window.onload = loadNeighborhoodDropdown;
+
+        //Calculates amount of CO2 absorbed by trees per year in kg
+        const co2PerYear = {
+            "Douglas fir": 44.1,"Larch": 32.8,"Fir": 21.9,"Spruce": 19.4,"Oak": 17.4,"Beech": 17.4,"Pine": 14.7
+        };
+        function calculateCO2() {
+            const species = document.getElementById('tree-menu').value;
+            const count = parseInt(document.getElementById("tree-number").value);
+
+            const totalKg = co2PerYear[species] * count;
+            document.getElementById('absorb-result').innerText = `Total CO2 absorbed per year: ${totalKg.toFixed(2)} kg`;
+        }
+
+    </script>
 </head>
 <body>
  <header>
@@ -24,12 +135,42 @@
     <!-- Background image -->
     <div id="background-image-neighborhood">
     <!-- Text box section -->
-        <div class="text-box">
+        <div class="tree-report">
             <h2>NYC Neighborhood Tree Report</h2>
-            <p>Select a neighborhood to see its top 20 most common tree species and counts in 2015, plus whether your area gained or lost trees between 2005 and 2015 Tree Cenuses.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sollicitudin dignissim ipsum, vel pellentesque erat hendrerit vitae. Fusce dictum ante ac mi malesuada faucibus ac ut enim. Proin ac dapibus massa. Nulla facilisi. Donec sodales mattis posuere. Morbi sodales quis ligula vel pharetra. In mollis enim urna, ornare convallis turpis venenatis quis. Vivamus eget semper tellus, sed feugiat felis. Phasellus consectetur neque dictum diam iaculis, eu volutpat turpis elementum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec finibus accumsan tortor sed vestibulum. Morbi lacinia efficitur dolor, ac pulvinar sapien gravida ut. Fusce viverra mi eget metus luctus finibus. Ut lobortis neque sit amet velit blandit egestas.</p>
-            <p>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam sodales leo et tellus mattis, sit amet tincidunt lectus fermentum. In enim augue, euismod eget porttitor nec, finibus nec lorem. Pellentesque eros dolor, auctor nec ipsum pulvinar, interdum aliquet massa. Praesent ac nisi tincidunt tellus bibendum lacinia. Proin non finibus urna, quis rhoncus lectus. Duis vestibulum dictum ex, non sagittis mauris varius sit amet. Sed vestibulum turpis nec dignissim imperdiet.</p>
-            <p>Fusce tincidunt sem sit amet libero aliquam egestas. Vivamus tortor leo, porta quis tristique vel, blandit id lectus. Suspendisse interdum suscipit nunc vitae mattis. Aenean vehicula eros quam, pellentesque malesuada mi pharetra et. Cras quis hendrerit felis. Fusce risus velit, laoreet sed varius ac, finibus eu tellus. Fusce velit felis, commodo a sapien feugiat, laoreet tincidunt dui. Curabitur ac imperdiet justo, ut hendrerit lectus. Nunc feugiat justo a lorem mollis scelerisque. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+            <p>Select your neighborhood to see its top 20 most common tree species and counts in 2015, plus whether your area gained or lost trees between the 2005 and 2015 NYC Tree Censuses.</p>
+            
+            <select id="neighborhood" class="dropdown-menu">
+                <option value="">Loading neighborhoods...</option>
+            </select>
+            <button onclick="fetchTreeReport()">Get Tree Report</button>
+            
+            <ul id="results"></ul>
+            <p id="tree-count"></p>
+        </div>
+        <div class="tree-report">
+            <h2>How much CO<sub>2</sub> can a tree absorb per year?</h2>
+            <p>Choose one of 7 common tree species to see how much CO<sub>2</sub> it absorbs in a year! Absorption data from <a href="https://www.fortomorrow.eu/en/blog/co2-tree">ForTomorrow</a>.</p>
+            <label for="tree-menu">Species:</label>
+            <select id="tree-menu">
+                <option value="Douglas fir">Douglas fir</option>
+                <option value="Larch">Larch</option>
+                <option value="Fir">Fir</option>
+                <option value="Spruce">Spruce</option>
+                <option value="Oak">Oak</option>
+                <option value="Beech">Beech</option>
+                <option value="Pine">Pine</option>
+            </select>
+
+            <br><br>
+
+            <label for="tree-number">Number of trees:</label>
+            <input type="number" id="tree-number" min="1" max="9999" value="1"></input>
+
+            <br><br>
+
+            <button onclick="calculateCO2()">Calculate CO<sub>2</sub> Absorption</button>
+
+            <h3 id="absorb-result"></h3>
         </div>
     <!-- closing background image (closing div below this line)-->
     </div>
