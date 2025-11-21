@@ -149,9 +149,9 @@ header{
     gap: 15px;
 }
 
-.header-nav::-webkit-scrollbar {
+/*.header-nav::-webkit-scrollbar {
     display: none;             
-}
+}*/
 
 .header-nav a {
     display: inline-block;
