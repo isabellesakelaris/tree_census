@@ -92,13 +92,13 @@ button {
     padding: 0;
 }
 
-#tree-list {
+#results {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-#tree-list li {
+#results li {
     padding-left: 0;
 }
 
