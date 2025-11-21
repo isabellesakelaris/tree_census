@@ -5,6 +5,19 @@
 <title>Tree Census Enthusiasts</title>
 <link rel=stylesheet type=text/css href=practice.css>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+    //Calculates amount of CO2 absorbed by trees per year in kg
+    const co2PerYear = {
+        "Douglas fir": 44.1,"Larch": 32.8,"Fir": 21.9,"Spruce": 19.4,"Oak": 17.4,"Beech": 17.4,"Pine": 14.7
+    };
+    function calculateCO2() {
+        const species = document.getElementById('tree-menu').value;
+        const count = parseInt(document.getElementById("tree-number").value);
+
+        const totalKg = co2PerYear[species] * count;
+        document.getElementById('absorb-result').innerText = `Total CO2 absorbed per year: ${totalKg.toFixed(2)} kg`;
+    }
+</script>
 </head>
 <body>
     <header>
@@ -31,7 +44,33 @@
             <p>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam sodales leo et tellus mattis, sit amet tincidunt lectus fermentum. In enim augue, euismod eget porttitor nec, finibus nec lorem. Pellentesque eros dolor, auctor nec ipsum pulvinar, interdum aliquet massa. Praesent ac nisi tincidunt tellus bibendum lacinia. Proin non finibus urna, quis rhoncus lectus. Duis vestibulum dictum ex, non sagittis mauris varius sit amet. Sed vestibulum turpis nec dignissim imperdiet.</p>
             <p>Fusce tincidunt sem sit amet libero aliquam egestas. Vivamus tortor leo, porta quis tristique vel, blandit id lectus. Suspendisse interdum suscipit nunc vitae mattis. Aenean vehicula eros quam, pellentesque malesuada mi pharetra et. Cras quis hendrerit felis. Fusce risus velit, laoreet sed varius ac, finibus eu tellus. Fusce velit felis, commodo a sapien feugiat, laoreet tincidunt dui. Curabitur ac imperdiet justo, ut hendrerit lectus. Nunc feugiat justo a lorem mollis scelerisque. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
         </div>
-            <!-- closing background image (closing div below this line)-->
+     <!-- CO2 calculator-->
+        <div class="tree-report">
+            <h2>How much CO<sub>2</sub> can a tree absorb per year?</h2>
+            <p>Choose one of 7 common tree species to see how much CO<sub>2</sub> it absorbs in a year! Absorption data from <a href="https://www.fortomorrow.eu/en/blog/co2-tree">ForTomorrow</a>.</p>
+            <label for="tree-menu">Species:</label>
+            <select id="tree-menu">
+                <option value="Douglas fir">Douglas fir</option>
+                <option value="Larch">Larch</option>
+                <option value="Fir">Fir</option>
+                <option value="Spruce">Spruce</option>
+                <option value="Oak">Oak</option>
+                <option value="Beech">Beech</option>
+                <option value="Pine">Pine</option>
+            </select>
+
+            <br><br>
+
+            <label for="tree-number">Number of trees:</label>
+            <input type="number" id="tree-number" min="1" max="9999" value="1"></input>
+
+            <br><br>
+
+            <button onclick="calculateCO2()">Calculate CO<sub>2</sub> Absorption</button>
+
+            <h3 id="absorb-result"></h3>
+        </div>
+    <!-- closing background image (closing div below this line)-->
     </div>
     <!-- Marquee section -->
     <div class="divider"></div>
