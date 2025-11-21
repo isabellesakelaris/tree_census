@@ -130,31 +130,33 @@ header{
     top: 0;
     background: #fffcf0;
     padding: 20px;
-    margin: 0;
     border-bottom:1px solid #365E41;
     border-radius: 3px;
 }
 
-header a {
-    text-decoration: none;
-    color: inherit;
-}
 .header-title {
     margin: 0;
     text-align: center;
 }
 .header-nav {
+    margin-top: 15px;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    overflow-x: auto;
     justify-content: center;
     gap: 15px;
-    padding-top: 15px;
+}
+
+#header-nav::-webkit-scrollbar {
+    display: none;             
 }
 
 .header-nav a {
     display: inline-block;
     padding: 8px 12px;
     white-space: nowrap;
+    text-decoration: none;
+    color: inherit;
 }
 
 @keyframes marquee-content {
