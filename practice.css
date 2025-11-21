@@ -5,12 +5,12 @@ body, html {
 
 h1 {
     font-family: new-spirit-condensed, Times, Serif;
-    font-size: 5vw;
-    line-height: 24px;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    line-height: 1.1;
     letter-spacing: 0;
     text-align: center;
     color:#365E41;
-    padding-top: 0px;
+    margin: 0px;
 }
 
 h2 {
