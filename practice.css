@@ -81,6 +81,7 @@ button {
     margin-bottom: 10px;
     padding: 10px;
     border: 3px solid #365E41;
+    background-color:#fffcf0;
 }
 .tree-report h2 {
     font-family: new-spirit-condensed, Times, Serif;
@@ -97,7 +98,7 @@ button {
     border-radius: 3px;
     border-color: #365E41;
 }
-#background-image-index {
+.background-image {
     max-width:100%;
     min-height:50vh;
     background-image:url(tree.png);
