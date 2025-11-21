@@ -70,6 +70,7 @@
             const neighborhood = dropdown.value.trim();
             const results = document.getElementById('results');
             const totalResults = document.getElementById('tree-count');
+            // clear previous results
             results.innerHTML = "";
             totalResults.innerHTML = "";
 
@@ -77,7 +78,8 @@
                 alert("Please select a neighborhood!");
                 return;
             }
-
+            results.innerHTML = `<h3>Top 20 tree species in ${neighborhood}:</h3>`;
+            
             const url = `https://data.cityofnewyork.us/resource/uvpi-gqnh.json?$select=spc_common,count(*) as quantity&$where=nta_name='${neighborhood}'&$group=spc_common&$order=quantity DESC&$limit=20&$$app_token=${APP_TOKEN}`;
 
             try {
