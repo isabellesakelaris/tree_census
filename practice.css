@@ -12,6 +12,7 @@ h1 {
     color:#365E41;
     padding-top: 0px;
 }
+
 h2 {
     text-align:left;
     font-family: new-spirit-condensed, Times, Serif;
@@ -137,6 +138,7 @@ header{
 .header-title {
     margin: 0;
     text-align: center;
+    text-decoration: none;
 }
 .header-nav {
     margin-top: 15px;
@@ -156,7 +158,8 @@ header{
     padding: 8px 12px;
     white-space: nowrap;
     text-decoration: none;
-    color: inherit;
+    font-family: 'Courier New', Courier, monospace;
+    color: #365E41;
 }
 
 @keyframes marquee-content {
