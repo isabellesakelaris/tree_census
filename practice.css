@@ -129,32 +129,34 @@ header{
     position: sticky;
     top: 0;
     background: #fffcf0;
-    padding: 50px;
-    margin: 0px;
-    clear:both;
-    border-bottom:solid;
+    padding: 20px;
+    margin: 0;
+    border-bottom:1px solid #365E41;
     border-radius: 3px;
-    border-color: #365E41;
 }
 
 header a {
     text-decoration: none;
+    color: inherit;
 }
-#header-title {
-    padding: 0px;
-    margin: 0px;
+.header-title {
+    margin: 0;
+    text-align: center;
 }
-#header-nav {
-    width: auto;
-    padding-top: 10px;
-    margin: 0px;
+.header-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding-top: 15px;
 }
 
-.header-nav-links {
-    width:25%;
-    float:left;
+.header-nav a {
+    display: inline-block;
+    padding: 8px 12px;
     white-space: nowrap;
 }
+
 @keyframes marquee-content {
 	from {
 		transform: translateX( 0% );
