@@ -53,6 +53,7 @@ button {
     font-family: new-spirit-condensed, Times, Serif;
     font-weight: bold;
 }
+/* marquee formatting */
 .marquee {
     width: 100%; 
     border-width: 7px 0;
@@ -162,6 +163,10 @@ header{
     margin: 0;
     text-align: center;
     text-decoration: none;
+}
+
+.header-title a {
+    text-decoration-line: none;
 }
 .header-nav {
     margin-top: 15px;
