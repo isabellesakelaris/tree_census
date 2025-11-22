@@ -53,6 +53,7 @@ button {
     font-family: new-spirit-condensed, Times, Serif;
     font-weight: bold;
 }
+/* marquee formatting */
 .marquee {
     width: 100%; 
     border-width: 7px 0;
@@ -66,6 +67,9 @@ button {
     font-size: 3em;
     bottom: 0;
 }
+.marquee a {
+    text-decoration-line: none;
+}
 .marquee-scroll {
     animation-duration: 20s ;
 	animation-iteration-count: infinite ;
@@ -75,6 +79,7 @@ button {
     margin: 1rem 0;
     font-family: new-spirit-condensed,Times, Serif;
 }
+
 /* neighborhood tree report formatting */
 .tree-report {
     width: 90%;
@@ -158,6 +163,10 @@ header{
     margin: 0;
     text-align: center;
     text-decoration: none;
+}
+
+.header-title a {
+    text-decoration-line: none;
 }
 .header-nav {
     margin-top: 15px;
