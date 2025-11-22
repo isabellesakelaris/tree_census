@@ -74,7 +74,9 @@ button {
 	padding: 0 1em 0 1em ;
     margin: 1rem 0;
     font-family: new-spirit-condensed,Times, Serif;
-    text-decoration: none;
+}
+.marquee_scroll a {
+    text-decoration-line: none;
 }
 /* neighborhood tree report formatting */
 .tree-report {
