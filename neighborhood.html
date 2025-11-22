@@ -37,6 +37,7 @@
         // Fetch total number of trees per neighborhood
         async function fetchTreeCount (neighborhood) {
             const totalResult = document.getElementById('tree-count');
+            // clear previous results
             totalResult.innerHTML ="";
 
             const url2015 = `https://data.cityofnewyork.us/resource/uvpi-gqnh.json?$select=count(tree_id) as total2015&$where=nta_name='${neighborhood}'&$$app_token=${APP_TOKEN}`;
@@ -85,7 +86,7 @@
             try {
             const response = await fetch(url);
             const json = await response.json();
-
+            //filter out unknown and zero values
             const nonzeroTrees = json.filter(row => row.spc_common && row.spc_common.toLowerCase() !== "unknown");
 
             if (!nonzeroTrees.length) {
