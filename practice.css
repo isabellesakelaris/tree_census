@@ -1,11 +1,33 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    background-color: #fffcf0;
+}
+
+h1 {
+    font-family: new-spirit-condensed, Times, Serif;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    line-height: 1.1;
+    letter-spacing: 0;
+    text-align: center;
+    color:#365E41;
+    margin: 0px;
+}
+
 h2 {
-    font-family: new-spirit-condensed;
-    color: #365E41;
+    text-align:left;
+    font-family: new-spirit-condensed, Times, Serif;
+    font-size:24px;
+    line-height:24px;
+    padding-left:14px;
+    color:#365E41;
 }
+
 h3 {
-    font-family: new-spirit-condensed;
+    font-family: new-spirit-condensed, Times, Serif;
     color: #365E41;
 }
+
 p {
     font-family: 'Courier New', Courier, monospace;
 }
@@ -16,52 +38,156 @@ a {
     color: #365E41;  
 }
 label {
-    font-family: new-spirit-condensed;
+    font-family: new-spirit-condensed, Times, Serif;
     color: #365E41;
 }
 button {
     background-color: #365E41;
-    color: white;
+    color: #fffcf0;
     border-radius: 5px;
     font-family: 'Courier New', Courier, monospace;
     cursor: pointer;
 }
 .green-text {
     color: #365E41;
-    font-family: new-spirit-condensed;
+    font-family: new-spirit-condensed, Times, Serif;
     font-weight: bold;
 }
+/* marquee formatting */
 .marquee {
     width: 100%; 
-    border-width: 7px 0px;
+    border-width: 7px 0;
     border-style: solid;
     border-color: #365E41;
     display: flex;
     overflow: hidden;
     white-space: nowrap;
-    background-color: white;
+    background-color: #fffcf0;
     color: #365E41;
-    font-size: 50px;
+    font-size: 3em;
+    bottom: 0;
+}
+.marquee a {
+    text-decoration-line: none;
 }
 .marquee-scroll {
     animation-duration: 20s ;
 	animation-iteration-count: infinite ;
 	animation-name: marquee-content ;
 	animation-timing-function: linear ;
-	padding: 0px 10px 0px 10px ;
-    margin: 20px 0;
-    font-family: new-spirit-condensed,times;
+	padding: 0 1em 0 1em ;
+    margin: 1rem 0;
+    font-family: new-spirit-condensed,Times, Serif;
 }
+
+/* neighborhood tree report formatting */
 .tree-report {
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 10px;
-    padding: 10px;
+    width: 90%;
+    max-width: 900px;
+    box-sizing: border-box; 
+    margin: 10px auto;
+    padding: 14px;
     border: 3px solid #365E41;
+    background-color:#fffcf0;
 }
+.tree-report h2 {
+    font-family: new-spirit-condensed, Times, Serif;
+    color: #365E41;
+}
+#results h3 {
+    margin: 0 0 0.5em 0;
+    padding: 0;
+}
+
+#results {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#results li {
+    padding-left: 0;
+}
+
 .dropdown-menu {
     max-width: 200px;
+}
+/* end neighborhood tree report formatting*/
+.divider {
+    clear:both;
+    border:solid;
+    border-radius: 3px;
+    border-color: #365E41;
+}
+.background-image {
+    max-width:100%;
+    min-height:50vh;
+    background-image:url(tree.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 30px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.text-box {
+    width: 90%;
+    max-width:900px;
+    padding: 14px;
+    background-color:#fffcf0;
+    border:solid 3px #365E41;
+    border-radius:3px;
+    box-sizing: border-box; 
+    margin: 10px auto;
+}
+
+.text-box p {
+    padding-left:14px;
+    padding-right:14px;
+    border:solid;
+    border-radius:1px;
+    border-color:#365E41;
+}
+/*header formatting*/
+header{
+    position: sticky;
+    top: 0;
+    background: #fffcf0;
+    padding: 20px;
+    border-bottom:1px solid #365E41;
+    border-radius: 3px;
+}
+
+.header-title {
+    margin: 0;
+    text-align: center;
+    text-decoration: none;
+}
+
+.header-title a {
+    text-decoration-line: none;
+}
+.header-nav {
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: center;
+    gap: 15px;
+}
+
+/*.header-nav::-webkit-scrollbar {
+    display: none;             
+}*/
+
+.header-nav a {
+    display: inline-block;
+    padding: 8px 12px;
+    white-space: nowrap;
+    text-decoration: none;
+    font-family: 'Courier New', Courier, monospace;
+    color: #365E41;
 }
 
 @keyframes marquee-content {
