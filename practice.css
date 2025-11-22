@@ -66,6 +66,9 @@ button {
     font-size: 3em;
     bottom: 0;
 }
+.marquee a {
+    text-decoration-line: none;
+}
 .marquee-scroll {
     animation-duration: 20s ;
 	animation-iteration-count: infinite ;
@@ -75,9 +78,7 @@ button {
     margin: 1rem 0;
     font-family: new-spirit-condensed,Times, Serif;
 }
-.marquee_scroll a {
-    text-decoration-line: none;
-}
+
 /* neighborhood tree report formatting */
 .tree-report {
     width: 90%;
