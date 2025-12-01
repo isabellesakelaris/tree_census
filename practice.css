@@ -31,10 +31,7 @@ h3 {
 p {
     font-family: 'Courier New', Courier, monospace;
 }
-p img {
-    max width: 100%;
-    height: auto;
-}
+
 ul {
     font-family:'Courier New', Courier, monospace;
 }
@@ -150,6 +147,11 @@ button {
     margin: 10px auto;
 }
 
+.text-box img{
+    max width: 100%;
+    height: auto;
+}
+}
 .text-box p {
     padding-left:14px;
     padding-right:14px;
