@@ -45,8 +45,8 @@ async function fetchNeighborhoods() {
     const neighborhoodResult = document.getElementById('neighborhood');
     neighborhoodResult.innerHTML = "";
 
-    const neighborhood_url2015 = `https://data.cityofnewyork.us/resource/uvpi-gqnh.json?$select=nta_name, count(*) as count2015 group by nta_name order by count2015 DESC&$$app_token=${APP_TOKEN}`;
-    const neighborhood_url2005 = `https://data.cityofnewyork.us/resource/29bw-z7pj.json?$select=nta_2000 as nta_name, count(*) as count2005 group by nta_2000 order by count2005 DESC&$$app_token=${APP_TOKEN}`;
+    const neighborhood_url2015 = `https://data.cityofnewyork.us/resource/uvpi-gqnh.json?$select=nta_name, count(*) as count2015&$group=nta_name&$order=count2015 DESC&$$app_token=${APP_TOKEN}`;
+    const neighborhood_url2005 =`https://data.cityofnewyork.us/resource/29bw-z7pj.json?$select=nta_2000 as nta_name, count(*) as count2005&$group=nta_2000&$order=count2005 DESC&$$app_token=${APP_TOKEN}`;
 
     try {
         const [nta2015, nta2005] = await Promise.all([
@@ -84,7 +84,7 @@ async function fetchNeighborhoods() {
             <a href="index.html">NYC Tree Census Enthusiasts</a>
         </h1>
         <!-- Nav bar-->
-        <nav class="header-nav">.
+        <nav class="header-nav">
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
             <a href="overall.html">Overall Report</a>
