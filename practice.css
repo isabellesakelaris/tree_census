@@ -150,6 +150,7 @@ button {
 .text-box img{
     max width: 100%;
     height: auto;
+    object-fit: contain;
 }
 }
 .text-box p {
