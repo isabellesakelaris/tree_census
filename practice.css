@@ -158,6 +158,9 @@ button {
     height: auto;
     display: block;
 }
+figcaption {
+    font-family: 'Courier New', Courier, monospace;
+}
 /*header formatting*/
 header{
     position: sticky;
