@@ -31,6 +31,10 @@ h3 {
 p {
     font-family: 'Courier New', Courier, monospace;
 }
+p img {
+    max width: 100%;
+    height: auto;
+}
 ul {
     font-family:'Courier New', Courier, monospace;
 }
