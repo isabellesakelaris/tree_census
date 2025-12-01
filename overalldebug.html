@@ -5,72 +5,78 @@
     <title>Overall NYC Tree Report</title>
     <link rel=stylesheet type=text/css href=practice.css>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <script>
-        const APP_TOKEN = "EuUJxbkjULlp0gbbri4FLO9hK";
-        // Fetch total number of trees 
-        async function fetchTreeCount () {
-            const totalResult = document.getElementById('tree-count');
-            // clear previous results
-            totalResult.innerHTML ="";
+ <script>
+    const APP_TOKEN = "EuUJxbkjULlp0gbbri4FLO9hK";
+    //Fetch total number of trees
+    async function fetchTreeCount() {
+        const totalResult = document.getElementById('tree-count');
+        totalResult.innerHTML = "";
 
-            const url2015 = `https://data.cityofnewyork.us/resource/uvpi-gqnh.json?$select=count(tree_id) as total2015&$$app_token=${APP_TOKEN}`;
-            const url2005 = `https://data.cityofnewyork.us/resource/29bw-z7pj.json?$select=count(tree_dbh) as total2005&$$app_token=${APP_TOKEN}`;
-            try {
-            const [response2015, response2005] = await Promise.all([
-                fetch(url2015), fetch(url2005)
-            ]);
-            const json2015 = await response2015.json();
-            const json2005 = await response2005.json();
-                
-            const total2015 = json2015?.[0]?.total2015 || 0;
-            const total2005 = json2005?.[0]?.total2005 || 0;
-                
-            //Calculate change in # of trees
-            const change = total2015 - total2005;
+        const url2015 = `https://data.cityofnewyork.us/resource/uvpi-gqnh.json?$select=count(tree_id) as total2015&$$app_token=${APP_TOKEN}`;
+        const url2005 = `https://data.cityofnewyork.us/resource/29bw-z7pj.json?$select=count(tree_dbh) as total2005&$$app_token=${APP_TOKEN}`;
 
-            totalResult.innerHTML = `<h3>Total tree count:</h3>
+        try {
+        const [response2015, response2005] = await Promise.all([
+            fetch(url2015), fetch(url2005)
+        ]);
+
+        const json2015 = await response2015.json();
+        const json2005 = await response2005.json();
+
+        const total2015 = json2015?.[0]?.total2015 || 0;
+        const total2005 = json2005?.[0]?.total2005 || 0;
+
+        //Calculate change in # of trees
+        const change = total2015 - total2005;
+
+        totalResult.innerHTML = `<h3>Total tree count:</h3>
             <span class="green-text">2015 Census:</span> ${total2015}<br>
             <span class="green-text">2005 Census:</span> ${total2005}<br>
-            <span class="green-text">Change over time:</span> ${change} trees`;
+            <span class="green-text">Change over time:</span> ${change} trees
+        `;
+    } catch (err) {
+        console.error("Error fetching data:", err);
+        totalResult.innerHTML = "Error fetching total tree count. We can't be-leaf it either!";
+    }
+}
 
-            } catch (err) {
-                console.error("Error fetching data:", err);
-                totalResult.innerHTML = "Error fetching total tree count. We can't be-leaf it either!";
-            }
-        }
-            //Fetch Neighborhoods with most trees
-        async function fetchNeighborhoods() {
-            const neighborhoodResult = document.getElementById('neighborhood')
-             // clear previous results
-            totalResult.innerHTML ="";
-            const neighborhood_url2015 = `https://data.cityofnewyork.us/resource/uvpi-gqnh.json?$select=count(nta_name) as nta2015&$$app_token=${APP_TOKEN}`;
-            const neighborhood_url2005 = `https://data.cityofnewyork.us/resource/29bw-z7pj.json?$select=count(tree_dbh) as nta2005&$$app_token=${APP_TOKEN}`;
-             try {
-            const [nta2015, nta2005] = await Promise.all([
-                fetch(neighborhood_url2015), fetch(url2005)
-            ]);
-            const neighborhood_json2015 = await nta2015.json();
+// Fetch Neighborhoods with most trees
+async function fetchNeighborhoods() {
+    const neighborhoodResult = document.getElementById('neighborhood');
+    neighborhoodResult.innerHTML = "";
+
+    const neighborhood_url2015 = `https://data.cityofnewyork.us/resource/uvpi-gqnh.json?$select=nta_name, count(*) as count2015 group by nta_name order by count2015 DESC&$$app_token=${APP_TOKEN}`;
+    const neighborhood_url2005 = `https://data.cityofnewyork.us/resource/29bw-z7pj.json?$select=nta_2000 as nta_name, count(*) as count2005 group by nta_2000 order by count2005 DESC&$$app_token=${APP_TOKEN}`;
+
+    try {
+        const [nta2015, nta2005] = await Promise.all([
+            fetch(neighborhood_url2015), fetch(neighborhood_url2005)
+        ]);
+
+        const neighborhood_json2015 = await nta2015.json();
         const neighborhood_json2005 = await nta2005.json();
-        try {
-            const [nta2015, nta2005] = await Promise.all([
-                fetch(neighborhood_url2015), fetch(neighborhood_url2005)
-            ]);
-            const neighborhood_json2015 = await nta2015.json();
-            const neighboirhood_json005 = await nta2005.json();
-                
-            const neighborhood_total2015 = neighborhood_json2015?.[0]?.total2015 || 0;
-            const neighborhood_total2005 = neighborhood_json2005?.[0]?.total2005 || 0;
-        } 
-        } catch (err) {
-                console.error("Error fetching data:", err);
-                totalResult.innerHTML = "Error fetching total tree count. We can't be-leaf it either!";
-            }
-        totalResult.innerHTML = `<h3>Neighborhoods with the Most Trees:</h3>
-            <span class="green-text">2015:</span> ${neighborhood_total2015}<br>
-            <span class="green-text">2005 Census:</span> ${neighborhood_total2005}<br>`;
-            
-        }
-    </script>
+
+        // Highest-count neighborhoods
+        const neighborhood_total2015 = neighborhood_json2015?.[0];
+        const neighborhood_total2005 = neighborhood_json2005?.[0];
+
+        neighborhoodResult.innerHTML = `
+            <h3>Neighborhoods with the Most Trees:</h3>
+
+            <span class="green-text">2015:</span> 
+                ${neighborhood_total2015?.nta_name || "Unknown"} — 
+                ${neighborhood_total2015?.count2015 || 0} trees<br>
+
+            <span class="green-text">2005:</span> 
+                ${neighborhood_total2005?.nta_name || "Unknown"} — 
+                ${neighborhood_total2005?.count2005 || 0} trees<br>
+        `;
+    } catch (err) {
+        console.error("Error fetching neighborhoods:", err);
+        neighborhoodResult.innerHTML = "Error fetching neighborhood data.";
+    }
+}
+</script>
 </head>
 <body>
  <header>
