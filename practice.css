@@ -113,6 +113,9 @@ button {
     max-width: 200px;
 }
 /* end neighborhood tree report formatting*/
+.sources {
+    border: solid 3px dashed;
+}
 .divider {
     clear:both;
     border:solid;
