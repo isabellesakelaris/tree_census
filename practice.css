@@ -114,7 +114,7 @@ button {
 }
 /* end neighborhood tree report formatting*/
 .sources {
-    border: solid 3px dashed;
+    border: dashed 3px #365E41;
 }
 .divider {
     clear:both;
