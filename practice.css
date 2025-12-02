@@ -28,13 +28,43 @@ h3 {
     color: #365E41;
 }
 
+h4 {
+	font-family:new-spirit-condensed, Times, Serif;
+	color: #365E41;
+}
+
 p {
     font-family: 'Courier New', Courier, monospace;
+}
+
+table { 
+	border-collapse: collapse;
+}
+
+th {
+    font-family: 'Courier New', Courier, monospace;
+	text-align:center;
+	border:solid;
+	border-color:#365E41;
+	;border-radius: 1px;
+}
+
+td {
+	font-family: 'Courier New', Courier, monospace;
+	text-align:center;
+	border:solid;
+	border-color:#365E41;
+	;border-radius: 1px;
 }
 
 ul {
     font-family:'Courier New', Courier, monospace;
 }
+
+ol {
+    font-family:'Courier New', Courier, monospace;
+}
+
 a {
     color: #365E41;  
 }
