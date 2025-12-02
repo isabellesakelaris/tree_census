@@ -88,6 +88,7 @@ button {
 /* footer formatting */
 
 .footer-text {
+	margin:0 auto;
 	font-family: new-spirit-condensed, Times, Serif;
     color: #365E41;
 	font-size: 13px;
