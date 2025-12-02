@@ -44,6 +44,7 @@ table {
 th {
     font-family: 'Courier New', Courier, monospace;
 	text-align:center;
+	color: #365E41;
 	border:solid;
 	border-color:#365E41;
 	;border-radius: 1px;
@@ -88,10 +89,11 @@ button {
 /* footer formatting */
 
 .footer-text {
-	margin:0 auto;
+	margin:0;
 	font-family: new-spirit-condensed, Times, Serif;
     color: #365E41;
 	font-size: 13px;
+	text-align:center;
 }
 
 /* marquee formatting */
