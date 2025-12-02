@@ -84,6 +84,15 @@ button {
     font-family: new-spirit-condensed, Times, Serif;
     font-weight: bold;
 }
+
+/* footer formatting */
+
+.footer-text {
+	font-family: new-spirit-condensed, Times, Serif;
+    color: #365E41;
+	font-size: 13px;
+}
+
 /* marquee formatting */
 .marquee {
     width: 100%; 
