@@ -47,7 +47,11 @@ th {
 	color: #365E41;
 	border:solid;
 	border-color:#365E41;
-	;border-radius: 1px;
+	border-radius: 1px;
+	padding-top: 2px;
+	padding-right: 2px;
+	padding-bottom: 2px;
+	padding-left: 2px;
 }
 
 td {
@@ -90,6 +94,8 @@ button {
 
 .footer-text {
 	margin:0;
+	padding-top:30px;
+	padding-bottom:30px;
 	font-family: new-spirit-condensed, Times, Serif;
     color: #365E41;
 	font-size: 13px;
