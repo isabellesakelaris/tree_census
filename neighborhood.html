@@ -10,7 +10,7 @@
         // Neighborhood dropdown menu for tree-report
         async function loadNeighborhoodDropdown() {
             const dropdown = document.getElementById('neighborhood');
-            dropdown.innerHTML = "<option>Loading...</option>";
+
 
             const url = `https://data.cityofnewyork.us/resource/uvpi-gqnh.json?$select=distinct nta_name&$order=nta_name&$$app_token=${APP_TOKEN}`;
 
