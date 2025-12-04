@@ -22,12 +22,10 @@
 
             json.forEach(row => {
                 const neighborhood = row.nta_name;
-                if (neighborhood) {
                 const option = document.createElement('option');
                 option.value = neighborhood;
                 option.textContent = neighborhood;
                 dropdown.appendChild(option);
-                }
             });
         } catch (err) {
         console.error("Error loading neighborhoods:", err);
