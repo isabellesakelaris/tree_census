@@ -11,7 +11,7 @@ h1 {
     letter-spacing: 0;
     text-align: center;
     color:#365E41;
-    margin: 0px;
+    margin: 0;
 }
 
 h2 {
@@ -46,21 +46,14 @@ th {
     font-family: 'Courier New', Courier, monospace;
 	text-align:center;
 	color: #365E41;
-	border:solid;
-	border-color:#365E41;
-	border-radius: 1px;
-	padding-top: 2px;
-	padding-right: 2px;
-	padding-bottom: 2px;
-	padding-left: 2px;
+	border:1px solid #365E41;
+	padding: 2px;
 }
 
 td {
 	font-family: 'Courier New', Courier, monospace;
 	text-align:center;
-	border:solid;
-	border-color:#365E41;
-	border-radius: 1px;
+	border:1px solid #365E41;
 }
 
 ul {
@@ -114,7 +107,6 @@ button {
     display: flex;
     overflow: hidden;
     white-space: nowrap;
-    background-color: #fffcf0;
     color: #365E41;
     font-size: 3em;
     bottom: 0;
@@ -123,11 +115,8 @@ button {
     text-decoration-line: none;
 }
 .marquee-scroll {
-    animation-duration: 25s ;
-	animation-iteration-count: infinite ;
-	animation-name: marquee-content ;
-	animation-timing-function: linear ;
-	padding: 0 1em 0 1em ;
+    animation: marquee-content 25s linear infinite;
+	padding: 0 1em;
     margin: 1rem 0;
     font-family: new-spirit-condensed,Times, Serif;
 }
@@ -169,12 +158,12 @@ button {
     border: dashed 3px #365E41;
     padding: 5px 10px;
 }
+
 .divider {
     clear:both;
-    border:solid;
-    border-radius: 3px;
-    border-color: #365E41;
+    border:3px solid #365E41;
 }
+
 .background-image {
     max-width:100%;
     min-height:50vh;
@@ -193,17 +182,15 @@ button {
     padding: 14px;
     background-color:#fffcf0;
     border:solid 3px #365E41;
-    border-radius:3px;
     box-sizing: border-box; 
     margin: 10px auto;
 }
 .text-box p {
     padding-left:14px;
     padding-right:14px;
-    border:solid;
-    border-radius:1px;
-    border-color:#365E41;
+    border:1px solid #365E41;
 }
+
 .text-box img {
     max-width: 100%;
     height: auto;
