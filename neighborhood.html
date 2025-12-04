@@ -85,7 +85,7 @@
             const response = await fetch(url);
             const json = await response.json();
             
-            //filter out unknown and zero values
+            //filter out unknown values
             const nonzeroTrees = json.filter(row => row.spc_common && row.spc_common.toLowerCase() !== "unknown");
 
             if (!nonzeroTrees.length) {
