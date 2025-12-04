@@ -10,7 +10,6 @@
         // Neighborhood dropdown menu for tree-report
         async function loadNeighborhoodDropdown() {
             const dropdown = document.getElementById('neighborhood');
-            dropdown.innerHTML = "<option>Loading...</option>";
 
             const url = `https://data.cityofnewyork.us/resource/uvpi-gqnh.json?$select=distinct nta_name&$order=nta_name&$$app_token=${APP_TOKEN}`;
 
@@ -22,12 +21,10 @@
 
             json.forEach(row => {
                 const neighborhood = row.nta_name;
-                if (neighborhood) {
                 const option = document.createElement('option');
                 option.value = neighborhood;
                 option.textContent = neighborhood;
                 dropdown.appendChild(option);
-                }
             });
         } catch (err) {
         console.error("Error loading neighborhoods:", err);
@@ -70,16 +67,14 @@
             const dropdown = document.getElementById('neighborhood');
             const neighborhood = dropdown.value.trim();
             const results = document.getElementById('results');
-            const totalResults = document.getElementById('tree-count');
             // clear previous results
             results.innerHTML = "";
-            totalResults.innerHTML = "";
 
             if (!neighborhood) {
                 alert("Please select a neighborhood!");
                 return;
             }
-            results.innerHTML =`<br><h3>Top 20 most common tree species in ${neighborhood}:</h3>`;
+            results.innerHTML =`<h3>Top 20 most common tree species in ${neighborhood}:</h3>`;
             
             const url = `https://data.cityofnewyork.us/resource/uvpi-gqnh.json?$select=spc_common,count(*) as quantity&$where=nta_name='${neighborhood}'&$group=spc_common&$order=quantity DESC&$limit=20&$$app_token=${APP_TOKEN}`;
 
