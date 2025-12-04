@@ -123,7 +123,7 @@ button {
     text-decoration-line: none;
 }
 .marquee-scroll {
-    animation-duration: 20s ;
+    animation-duration: 25s ;
 	animation-iteration-count: infinite ;
 	animation-name: marquee-content ;
 	animation-timing-function: linear ;
