@@ -10,7 +10,7 @@
         // Neighborhood dropdown menu for tree-report
         async function loadNeighborhoodDropdown() {
             const dropdown = document.getElementById('neighborhood');
-            dropdown.innerHTML = "<option>Loading...</option>";
+
 
             const url = `https://data.cityofnewyork.us/resource/uvpi-gqnh.json?$select=distinct nta_name&$order=nta_name&$$app_token=${APP_TOKEN}`;
 
@@ -22,12 +22,10 @@
 
             json.forEach(row => {
                 const neighborhood = row.nta_name;
-                if (neighborhood) {
                 const option = document.createElement('option');
                 option.value = neighborhood;
                 option.textContent = neighborhood;
                 dropdown.appendChild(option);
-                }
             });
         } catch (err) {
         console.error("Error loading neighborhoods:", err);
@@ -79,7 +77,7 @@
                 alert("Please select a neighborhood!");
                 return;
             }
-            results.innerHTML =`<br><h3>Top 20 most common tree species in ${neighborhood}:</h3>`;
+            results.innerHTML =`<h3>Top 20 most common tree species in ${neighborhood}:</h3>`;
             
             const url = `https://data.cityofnewyork.us/resource/uvpi-gqnh.json?$select=spc_common,count(*) as quantity&$where=nta_name='${neighborhood}'&$group=spc_common&$order=quantity DESC&$limit=20&$$app_token=${APP_TOKEN}`;
 
@@ -87,19 +85,19 @@
             const response = await fetch(url);
             const json = await response.json();
             
-            //filter out unknown and zero values
+            //filter out unknown values
             const nonzeroTrees = json.filter(row => row.spc_common && row.spc_common.toLowerCase() !== "unknown");
 
             if (!nonzeroTrees.length) {
                 results.innerHTML = "<li>No results found.</li>";
                 return;
-            } else {
+            }
             nonzeroTrees.forEach(row => {
                 const li = document.createElement('li');
                 li.textContent = `${row.spc_common}: ${row.quantity}`;
                 results.appendChild(li);
             });
-            } fetchTreeCount(neighborhood);
+            fetchTreeCount(neighborhood);
         } catch (err) {
             console.error("Fetch error:", err);
             results.innerHTML = "<li>Error fetching data. Sorry, we're stumped!</li>";
@@ -119,6 +117,7 @@
             <a href="about.html">About</a>
             <a href="overall.html">Overall Report</a>
             <a href="neighborhood.html">Neighborhood Report</a>
+            <a href="bibliography.html">Bibliography</a>
         </nav>
     </header>
     <!-- divider -->
@@ -143,6 +142,10 @@
             <p><span id="para1"></span>Canopy cover data from 2017 showed that trees are not equitably distributed across New York City. Neighborhoods with lower-income households and higher proportions of people of color generally have less tree cover than wealthier, whiter neighborhoods. These neighborhoods are more vulnerable to heat as a result, as we can see from the maps below.</p>
                 <figure><img src="canopygraphic.jpg" alt="A neighborhood map of NYC showing the percentage of land covered by tree canopy and a neighborhood map of NYC showing the Heat Vulnerability Index"><figcaption>Graphic from the NYC Urban Forest Agenda<sup><a href="#source1">1</a></sup></figcaption></figure>
             <p>One of the proposed goals of the NYC Urban Forest Agenda (a project of the Nature Conservancy) is to expand canopy coverage in the city to 30% by 2035.</p>    
+        </div>
+    <!--source jumplinks-->
+        <div class="text-box">
+            <p><span id="source1">1. <a href="#para1">^</a>NYC Urban Forest Task Force 2021.</span></p>
         </div>
     <!-- closing background image (closing div below this line)-->
     </div>
