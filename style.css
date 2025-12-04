@@ -129,7 +129,6 @@ button {
     margin: 10px auto;
     padding: 14px;
     border: 3px solid #365E41;
-    background-color:#fffcf0;
 }
 .tree-report h2 {
     font-family: new-spirit-condensed, Times, Serif;
@@ -180,7 +179,6 @@ button {
     width: 90%;
     max-width:900px;
     padding: 14px;
-    background-color:#fffcf0;
     border:solid 3px #365E41;
     box-sizing: border-box; 
     margin: 10px auto;
@@ -204,7 +202,6 @@ figcaption {
 header{
     position: sticky;
     top: 0;
-    background: #fffcf0;
     padding: 20px;
     border-bottom:1px solid #365E41;
     border-radius: 3px;
