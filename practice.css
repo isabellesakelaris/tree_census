@@ -26,13 +26,11 @@ h2 {
 h3 {
     font-family: new-spirit-condensed, Times, Serif;
     color: #365E41;
-    font-weight: 550;
 }
 
 h4 {
 	font-family:new-spirit-condensed, Times, Serif;
 	color: #365E41;
-    font-weight: 550;
 }
 
 p {
@@ -67,10 +65,12 @@ td {
 
 ul {
     font-family:'Courier New', Courier, monospace;
+    font-weight: 550;
 }
 
 ol {
     font-family:'Courier New', Courier, monospace;
+    font-weight: 550;
 }
 
 a {
@@ -211,6 +211,7 @@ button {
 }
 figcaption {
     font-family: 'Courier New', Courier, monospace;
+    font-weight: 550;
 }
 /*header formatting*/
 header{
@@ -247,6 +248,7 @@ header{
     text-decoration: none;
     font-family: 'Courier New', Courier, monospace;
     color: #365E41;
+    font-weight: 550;
 }
 
 @keyframes marquee-content {
