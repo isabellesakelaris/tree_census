@@ -11,7 +11,7 @@ h1 {
     letter-spacing: 0;
     text-align: center;
     color:#365E41;
-    margin: 0px;
+    margin: 0;
 }
 
 h2 {
@@ -23,15 +23,11 @@ h2 {
     color:#365E41;
 }
 
-h3 {
+h3, h4, label, .tree-report h2 {
     font-family: new-spirit-condensed, Times, Serif;
     color: #365E41;
 }
 
-h4 {
-	font-family:new-spirit-condensed, Times, Serif;
-	color: #365E41;
-}
 
 p {
     font-family: 'Courier New', Courier, monospace;
@@ -46,29 +42,17 @@ th {
     font-family: 'Courier New', Courier, monospace;
 	text-align:center;
 	color: #365E41;
-	border:solid;
-	border-color:#365E41;
-	border-radius: 1px;
-	padding-top: 2px;
-	padding-right: 2px;
-	padding-bottom: 2px;
-	padding-left: 2px;
+	border:1px solid #365E41;
+	padding: 2px;
 }
 
 td {
 	font-family: 'Courier New', Courier, monospace;
 	text-align:center;
-	border:solid;
-	border-color:#365E41;
-	;border-radius: 1px;
+	border:1px solid #365E41;
 }
 
-ul {
-    font-family:'Courier New', Courier, monospace;
-    font-weight: 550;
-}
-
-ol {
+ul, ol, figcaption {
     font-family:'Courier New', Courier, monospace;
     font-weight: 550;
 }
@@ -76,10 +60,7 @@ ol {
 a {
     color: #365E41;  
 }
-label {
-    font-family: new-spirit-condensed, Times, Serif;
-    color: #365E41;
-}
+
 button {
     background-color: #365E41;
     color: #fffcf0;
@@ -87,6 +68,7 @@ button {
     font-family: 'Courier New', Courier, monospace;
     cursor: pointer;
 }
+
 .green-text {
     color: #365E41;
     font-family: new-spirit-condensed, Times, Serif;
@@ -114,7 +96,6 @@ button {
     display: flex;
     overflow: hidden;
     white-space: nowrap;
-    background-color: #fffcf0;
     color: #365E41;
     font-size: 3em;
     bottom: 0;
@@ -123,11 +104,8 @@ button {
     text-decoration-line: none;
 }
 .marquee-scroll {
-    animation-duration: 25s ;
-	animation-iteration-count: infinite ;
-	animation-name: marquee-content ;
-	animation-timing-function: linear ;
-	padding: 0 1em 0 1em ;
+    animation: marquee-content 25s linear infinite;
+	padding: 0 1em;
     margin: 1rem 0;
     font-family: new-spirit-condensed,Times, Serif;
 }
@@ -140,12 +118,9 @@ button {
     margin: 10px auto;
     padding: 14px;
     border: 3px solid #365E41;
-    background-color:#fffcf0;
+    background-color: #fffcf0
 }
-.tree-report h2 {
-    font-family: new-spirit-condensed, Times, Serif;
-    color: #365E41;
-}
+
 #results h3 {
     margin: 0 0 0.5em 0;
     padding: 0;
@@ -169,12 +144,12 @@ button {
     border: dashed 3px #365E41;
     padding: 5px 10px;
 }
+
 .divider {
     clear:both;
-    border:solid;
-    border-radius: 3px;
-    border-color: #365E41;
+    border:3px solid #365E41;
 }
+
 .background-image {
     max-width:100%;
     min-height:50vh;
@@ -191,36 +166,30 @@ button {
     width: 90%;
     max-width:900px;
     padding: 14px;
-    background-color:#fffcf0;
     border:solid 3px #365E41;
-    border-radius:3px;
     box-sizing: border-box; 
     margin: 10px auto;
+    background-color: #fffcf0
 }
 .text-box p {
     padding-left:14px;
     padding-right:14px;
-    border:solid;
-    border-radius:1px;
-    border-color:#365E41;
+    border:1px solid #365E41;
 }
+
 .text-box img {
     max-width: 100%;
     height: auto;
     display: block;
 }
-figcaption {
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: 550;
-}
+
 /*header formatting*/
 header{
     position: sticky;
     top: 0;
-    background: #fffcf0;
     padding: 20px;
-    border-bottom:1px solid #365E41;
-    border-radius: 3px;
+    border-bottom:3px solid #365E41;
+    background-color: #fffcf0
 }
 
 .header-title {
@@ -230,15 +199,15 @@ header{
 }
 
 .header-title a {
-    text-decoration-line: none;
+    text-decoration: none;
 }
+
 .header-nav {
     margin-top: 15px;
     display: flex;
-    flex-wrap: nowrap;
     overflow-x: auto;
-    justify-content: center;
     gap: 15px;
+    justify-content: center;
 }
 
 .header-nav a {
