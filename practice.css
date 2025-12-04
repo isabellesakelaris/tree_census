@@ -26,11 +26,13 @@ h2 {
 h3 {
     font-family: new-spirit-condensed, Times, Serif;
     color: #365E41;
+    font-weight: 550;
 }
 
 h4 {
 	font-family:new-spirit-condensed, Times, Serif;
 	color: #365E41;
+    font-weight: 550;
 }
 
 p {
@@ -237,10 +239,6 @@ header{
     justify-content: center;
     gap: 15px;
 }
-
-/*.header-nav::-webkit-scrollbar {
-    display: none;             
-}*/
 
 .header-nav a {
     display: inline-block;
