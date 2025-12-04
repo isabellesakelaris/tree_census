@@ -15,7 +15,7 @@
         const count = parseInt(document.getElementById("tree-number").value);
 
         const totalKg = co2PerYear[species] * count;
-        document.getElementById('co2-result').innerText = `Total CO2 absorbed per year: ${totalKg.toFixed(2)} kg`;
+        document.getElementById('co2-result').innerHTML = `Total CO<sub>2</sub> absorbed per year: ${totalKg.toFixed(2)} kg`;
     }
 </script>
 </head>
