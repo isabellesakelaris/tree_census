@@ -216,7 +216,7 @@ header{
 }
 
 .header-title a {
-    text-decoration-line: none;
+    text-decoration: none;
 }
 .header-nav {
     margin-top: 15px;
