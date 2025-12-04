@@ -60,7 +60,7 @@ td {
 	text-align:center;
 	border:solid;
 	border-color:#365E41;
-	;border-radius: 1px;
+	border-radius: 1px;
 }
 
 ul {
@@ -235,9 +235,7 @@ header{
 .header-nav {
     margin-top: 15px;
     display: flex;
-    flex-wrap: nowrap;
     overflow-x: auto;
-    justify-content: center;
     gap: 15px;
 }
 
