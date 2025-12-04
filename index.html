@@ -15,7 +15,7 @@
         const count = parseInt(document.getElementById("tree-number").value);
 
         const totalKg = co2PerYear[species] * count;
-        document.getElementById('absorb-result').innerText = `Total CO2 absorbed per year: ${totalKg.toFixed(2)} kg`;
+        document.getElementById('co2-result').innerText = `Total CO2 absorbed per year: ${totalKg.toFixed(2)} kg`;
     }
 </script>
 </head>
@@ -63,7 +63,7 @@
             <input type="number" id="tree-number" min="1" max="9999" value="1">
             <br><br>
             <button onclick="calculateCO2()">Calculate CO<sub>2</sub> Absorption</button>
-            <h3 id="absorb-result"></h3>
+            <h3 id="co2-result"></h3>
         </div>
     <!-- closing background image (closing div below this line)-->
     </div>
