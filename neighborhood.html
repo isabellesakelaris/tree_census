@@ -22,10 +22,12 @@
 
             json.forEach(row => {
                 const neighborhood = row.nta_name;
+                if (neighborhood) {
                 const option = document.createElement('option');
                 option.value = neighborhood;
                 option.textContent = neighborhood;
                 dropdown.appendChild(option);
+                }
             });
         } catch (err) {
         console.error("Error loading neighborhoods:", err);
@@ -68,14 +70,16 @@
             const dropdown = document.getElementById('neighborhood');
             const neighborhood = dropdown.value.trim();
             const results = document.getElementById('results');
+            const totalResults = document.getElementById('tree-count');
             // clear previous results
             results.innerHTML = "";
+            totalResults.innerHTML = "";
 
             if (!neighborhood) {
                 alert("Please select a neighborhood!");
                 return;
             }
-            results.innerHTML =`<h3>Top 20 most common tree species in ${neighborhood}:</h3>`;
+            results.innerHTML =`<br><h3>Top 20 most common tree species in ${neighborhood}:</h3>`;
             
             const url = `https://data.cityofnewyork.us/resource/uvpi-gqnh.json?$select=spc_common,count(*) as quantity&$where=nta_name='${neighborhood}'&$group=spc_common&$order=quantity DESC&$limit=20&$$app_token=${APP_TOKEN}`;
 
@@ -83,23 +87,24 @@
             const response = await fetch(url);
             const json = await response.json();
             
-            //filter out unknown values
+            //filter out unknown and zero values
             const nonzeroTrees = json.filter(row => row.spc_common && row.spc_common.toLowerCase() !== "unknown");
 
             if (!nonzeroTrees.length) {
                 results.innerHTML = "<li>No results found.</li>";
                 return;
-            }
+            } else {
             nonzeroTrees.forEach(row => {
                 const li = document.createElement('li');
                 li.textContent = `${row.spc_common}: ${row.quantity}`;
                 results.appendChild(li);
             });
-            fetchTreeCount(neighborhood);
+            } fetchTreeCount(neighborhood);
         } catch (err) {
             console.error("Fetch error:", err);
             results.innerHTML = "<li>Error fetching data. Sorry, we're stumped!</li>";
             }
+        }
         window.onload = loadNeighborhoodDropdown;
     </script>
 </head>
