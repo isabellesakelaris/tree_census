@@ -70,8 +70,10 @@
             const dropdown = document.getElementById('neighborhood');
             const neighborhood = dropdown.value.trim();
             const results = document.getElementById('results');
+            const totalResults = document.getElementById('tree-count');
             // clear previous results
             results.innerHTML = "";
+            totalResults.innerHTML = "";
 
             if (!neighborhood) {
                 alert("Please select a neighborhood!");
