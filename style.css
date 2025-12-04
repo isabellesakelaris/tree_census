@@ -23,15 +23,11 @@ h2 {
     color:#365E41;
 }
 
-h3 {
+h3, h4, label, .tree-report h2 {
     font-family: new-spirit-condensed, Times, Serif;
     color: #365E41;
 }
 
-h4 {
-	font-family:new-spirit-condensed, Times, Serif;
-	color: #365E41;
-}
 
 p {
     font-family: 'Courier New', Courier, monospace;
@@ -56,12 +52,7 @@ td {
 	border:1px solid #365E41;
 }
 
-ul {
-    font-family:'Courier New', Courier, monospace;
-    font-weight: 550;
-}
-
-ol {
+ul, ol, figcaption {
     font-family:'Courier New', Courier, monospace;
     font-weight: 550;
 }
@@ -69,10 +60,7 @@ ol {
 a {
     color: #365E41;  
 }
-label {
-    font-family: new-spirit-condensed, Times, Serif;
-    color: #365E41;
-}
+
 button {
     background-color: #365E41;
     color: #fffcf0;
@@ -80,6 +68,7 @@ button {
     font-family: 'Courier New', Courier, monospace;
     cursor: pointer;
 }
+
 .green-text {
     color: #365E41;
     font-family: new-spirit-condensed, Times, Serif;
@@ -131,10 +120,7 @@ button {
     border: 3px solid #365E41;
     background-color: #fffcf0
 }
-.tree-report h2 {
-    font-family: new-spirit-condensed, Times, Serif;
-    color: #365E41;
-}
+
 #results h3 {
     margin: 0 0 0.5em 0;
     padding: 0;
@@ -196,10 +182,7 @@ button {
     height: auto;
     display: block;
 }
-figcaption {
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: 550;
-}
+
 /*header formatting*/
 header{
     position: sticky;
@@ -218,6 +201,7 @@ header{
 .header-title a {
     text-decoration: none;
 }
+
 .header-nav {
     margin-top: 15px;
     display: flex;
