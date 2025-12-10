@@ -270,6 +270,8 @@ header{
 }
 
 .p-wrap {
+	font-family: 'Courier New', Courier, monospace;
+    font-weight: 550;
 	text-wrap: wrap;
 	overflow-wrap: break-word;
 }
