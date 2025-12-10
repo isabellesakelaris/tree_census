@@ -16,11 +16,15 @@
             const isExpanded = content.classList.contains("expanded");
 
             if (isExpanded) {
+                // Collapse the content
                 content.classList.remove("expanded");
-                caret.style.transform = "rotate(0deg)"; // caret points down
+                // Rotate caret back to default (0deg)
+                caret.classList.remove("caret-rotated"); 
             } else {
+                // Expand the content
                 content.classList.add("expanded");
-                caret.style.transform = "rotate(180deg)"; // caret flips up
+                // Rotate caret to 180deg (points up)
+                caret.classList.add("caret-rotated");
             }
             });
         });
