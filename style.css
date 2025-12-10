@@ -267,7 +267,7 @@ header{
 }
 
 .expander-content.expanded {
-  max-height: 1000px;
+  max-height: 2000px;
   opacity: 1;
 }
 
