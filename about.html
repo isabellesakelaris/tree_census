@@ -5,6 +5,26 @@
     <title>About Tree Census Enthusiasts</title>
     <link rel=stylesheet type=text/css href=style.css>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--Census backgrounder show/hide "buttons" (they're huge) for each year-->
+    <script>
+       const buttons = document.querySelectorAll(".expander-button");
+        buttons.forEach(function(btn) {
+            const caret = btn.querySelector(".caret");
+            const content = btn.nextElementSibling;
+
+            btn.addEventListener("click", function() {
+            const isExpanded = content.classList.contains("expanded");
+
+            if (isExpanded) {
+                content.classList.remove("expanded");
+                caret.style.transform = "rotate(0deg)"; // caret points down
+            } else {
+                content.classList.add("expanded");
+                caret.style.transform = "rotate(180deg)"; // caret flips up
+            }
+            });
+        });
+    </script>
 </head>
 <body>
     <header>
@@ -74,25 +94,5 @@
         <p class="footer-text">Website built by Fiona Corcoran, Michael Persson, and Isabelle Sakelaris.<br>
         &copy; 2025 NYC Tree Enthusiasts</p>
     </footer>
-    <!--Census backgrounder show/hide "buttons" (they're huge) for each year-->
-    <script>
-       const buttons = document.querySelectorAll(".expander-button");
-        buttons.forEach(function(btn) {
-            const caret = btn.querySelector(".caret");
-            const content = btn.nextElementSibling;
-
-            btn.addEventListener("click", function() {
-            const isExpanded = content.classList.contains("expanded");
-
-            if (isExpanded) {
-                content.classList.remove("expanded");
-                caret.style.transform = "rotate(0deg)"; // caret points down
-            } else {
-                content.classList.add("expanded");
-                caret.style.transform = "rotate(180deg)"; // caret flips up
-            }
-            });
-        });
-    </script>
 </body>
 </html>
