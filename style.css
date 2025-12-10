@@ -32,8 +32,6 @@ h3, h4, label, .tree-report h2 {
 p {
     font-family: 'Courier New', Courier, monospace;
     font-weight: 550;
-	text-wrap: wrap;
-	overflow-wrap: break-word;
 }
 
 table { 
@@ -269,4 +267,9 @@ header{
 .expander-content.expanded {
   max-height: 1000px;
   opacity: 1;
+}
+
+.p-wrap {
+	text-wrap: wrap;
+	overflow-wrap: break-word;
 }
