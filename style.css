@@ -153,7 +153,7 @@ button {
 .background-image {
     max-width:100%;
     min-height:50vh;
-    background-image:url(tree.png);
+    background-image:url(tree.png); 
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -189,7 +189,8 @@ header{
     top: 0;
     padding: 20px;
     border-bottom:3px solid #365E41;
-    background-color: #fffcf0
+    background-color: #fffcf0;
+    z-index: 10;
 }
 
 .header-title {
@@ -208,6 +209,7 @@ header{
     overflow-x: auto;
     gap: 15px;
     justify-content: center;
+    background-color:#fffcf0;
 }
 
 .header-nav a {
@@ -232,3 +234,35 @@ header{
   font-family: new-spirit-condensed; 
   src: url(new-spirit-condensed.otf); 
     }
+
+/*About Page collapsible paragraphs section*/
+.expander-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: px;
+  cursor: pointer;
+  background-color: #365e41;
+  border: none;
+  font-family: new-spirit-condensed, Times, Serif;
+  font-size: 18px;
+}
+
+.caret {
+  transition: transform 1s ease;
+}
+
+.expander-content {
+  max-height: 0;
+  overflow: hidden;
+  padding: 2px;
+  opacity: 0;
+  transition: max-height 1s ease, opacity 1s ease;
+  position: relative;
+}
+
+.expander-content.expanded {
+  max-height: 1000px;
+  opacity: 1;
+}
