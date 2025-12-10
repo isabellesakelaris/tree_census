@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!--Census backgrounder show/hide "buttons" (they're huge) for each year-->
     <script>
+    document.addEventListener('DOMContentLoaded', function() {
        const buttons = document.querySelectorAll(".expander-button");
         buttons.forEach(function(btn) {
             const caret = btn.querySelector(".caret");
@@ -28,6 +29,7 @@
             }
             });
         });
+    });
     </script>
 </head>
 <body>
