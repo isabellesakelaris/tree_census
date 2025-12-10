@@ -253,6 +253,10 @@ header{
   transition: transform 1s ease;
 }
 
+.caret-rotated {
+    transform: rotate(180deg);
+}
+
 .expander-content {
   max-height: 0;
   overflow: hidden;
