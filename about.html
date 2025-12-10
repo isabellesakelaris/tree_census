@@ -28,11 +28,39 @@
         <div class="text-box">
             <h2>About the authors</h2>
                 <p class="paragraph"><span class="green-text">Fiona Corcoran</span> is currently pursuing an M.S. in Library and Information Science at the School of Information, Pratt Institute. Her favorite tree is the Eastern Redbud, scientific name <a href="https://en.wikipedia.org/wiki/Cercis_canadensis"><i>Cercis canadensis</i></a>, because of the beautiful reddish-pink flowers that grow both on the branches and straight out of the trunk. She contributed CSS for the website and JavaScript for the Neighborhood Report and CO<sub>2</sub> calculator.<br><br>
-                <span class="green-text">Michael Persson</span> TKTKTKTKTK [program, fave tree, contributions, any other fun thing goes here.]<br><br>
+                <span class="green-text">Michael Persson</span> is currently pursuing an M.S. in Information Experience Design at the School of Information at Pratt Institute. His favorite tree is the Japanese Maple, scientific name <a href="https://en.wikipedia.org/wiki/Acer_palmatum"><i>Acer palmatum</i></a>, specifically the cultivars with vibrant red foliage and domed canopies. He also has a special spot for <a href="https://en.wikipedia.org/wiki/Adansonia"><i>Baobab</i></a> trees, having spent a lot of time with childhood friends climbing a small one in his neighborhood in Barbados. He contributed some HTML, CSS, and JavaScript to this page.<br><br>
                 <span class="green-text">Isabelle Sakelaris</span> is currently pursuing an M.S. in Library and Information Science as well as an M.A. in History of Art and Design from Pratt Institute. Her favorite tree is the Willow tree, scientific name <a href="https://en.wikipedia.org/wiki/Willow"><i>Salix</i></a>, though she also appreciates the <a href="https://en.wikipedia.org/wiki/Ginkgo_biloba"><i>Ginkgo Biloba</i></a>. She contributed HTML and some CSS for the website.<br/><br/>
                 </p>
             <h2>About the NYC Tree Census</h2>
-                <p class="paragraph">TKTKTKTKTK</p>
+            <section class="census-history">
+                <button class="expander-button">
+                    <span>History</span>
+                    <span class="caret">▼</span>
+                </button>
+                <div class="expander-content">
+                    <p>The census efforts historically occurred in 1995-1996, 2005-2006, and 2015-2016, with the goal of tracking the location, size, species, and condition of New York’s urban forest. As of December 1st, 2025, the Parks Department is still in the middle of processing data collected in 2025’s Census. We hope to update this website once this year’s data is published.</p>
+                    <h3>1995</h3>
+                    <p>The 1995-1996 Street Tree Census established the initial baseline data for the city’s street tree population, 498,470.<sup><a href="#source1">1</a></sup>  A significant finding from this first count was the existence of more than <strong>10,000 dead street trees</strong>, prompting the city to create a block pruning program and committing to removing dead trees within 30 days of notice.</p>
+                    <h3>2005</h3>
+                    <p>Ten years later, the 2005-2006 census recorded <strong>592,130</strong> street trees, reflecting a notable 19% increase in the population. The data from this count helped to quantify the environmental impact of trees, air quality improvement and energy savings, totaling nearly $122 million in annual benefits. This understanding of the trees' economic value helped launch the MillionTreesNYC urban greening campaign. </p>
+                    <h3>2015</h3>
+                    <p>The 2015-2016 census counted 666,134 street trees. This effort found that the total annual benefits provided by street trees had risen to $151.3 million. The census data revealed that the street tree population was approximately 73.7% stocked, indicating space for roughly 240,000 new trees. Furthermore, analyses noted a change in species distribution, including a decrease in the prevalence of Norway maple, dropping from 14% in 2005 to 5.2% in 2015. This comprehensive, spatially accurate inventory was later used to create the public-facing New York City Street Tree Map.</p>
+                </div>
+                <button class="expander-button">
+                    <span>Urban Planning Impact</span>
+                    <span class="caret">▼</span>
+                </button>
+                <div class="expander-content">
+                    <p>The data collected during the census is critical for long-term urban forest management and city planning. The information quantifies the ecological and economic benefits provided by trees, proving that they are valuable public assets comparable to streets and bridges. Trees offer numerous services vital for the city's health and climate resilience, such as mitigating the urban heat island effect by cooling city streets and shading buildings. They also save energy, reduce noise, and actively clean the air by absorbing gaseous pollutants and intercepting particulate matter like dust and smoke. Furthermore, trees reduce stormwater runoff, protecting water quality by limiting the amount of rainfall that reaches the ground and delaying the time of peak flow. The 2015 census calculated the total annual benefits provided by street trees amounted to over $151 million. This comprehensive data is instrumental in driving municipal goals, such as the ambitious plan to increase the city's tree canopy cover from 22% (as recorded in 2017) to 30% by 2035.</p>
+                </div>
+                <button class="expander-button">
+                    <span>Volunteer Involvement</span>
+                    <span class="caret">▼</span>
+                </button>
+                <div class="expander-content">
+                    <p>Volunteers, often referred to as citizen mappers, are essential to executing the decennial tree census. During the TreesCount! 2015 effort, over 2,200 active volunteers participated, contributing nearly 12,000 hours of time. These individuals helped survey and map 34% (225,595) of the counted street trees by locating them, measuring their circumference, and assessing their health. Volunteers employed both traditional tools like tape measures and survey wheels alongside mobile phone applications, such as the mobile-first web application called TreeCorder, to collect spatially accurate data. While technological advances like using ground-based LiDAR scanning are increasingly handling the tally of street trees, volunteers continue to be needed to inventory trees located in parks, playgrounds, and picnic areas for the current 2025 census. This citizen science model helps collect standardized data and fosters a vital connection between New Yorkers and their environment.</p>
+                </div>
+            </section>
         </div> 
     <!-- closing background image (closing div below this line)-->
     </div>
@@ -46,5 +74,25 @@
         <p class="footer-text">Website built by Fiona Corcoran, Michael Persson, and Isabelle Sakelaris.<br>
         &copy; 2025 NYC Tree Enthusiasts</p>
     </footer>
+    <!--Census backgrounder show/hide "buttons" (they're huge) for each year-->
+    <script>
+       const buttons = document.querySelectorAll(".expander-button");
+        buttons.forEach(function(btn) {
+            const caret = btn.querySelector(".caret");
+            const content = btn.nextElementSibling;
+
+            btn.addEventListener("click", function() {
+            const isExpanded = content.classList.contains("expanded");
+
+            if (isExpanded) {
+                content.classList.remove("expanded");
+                caret.style.transform = "rotate(0deg)"; // caret points down
+            } else {
+                content.classList.add("expanded");
+                caret.style.transform = "rotate(180deg)"; // caret flips up
+            }
+            });
+        });
+    </script>
 </body>
 </html>
