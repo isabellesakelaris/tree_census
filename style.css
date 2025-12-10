@@ -36,8 +36,6 @@ p {
 
 table { 
 	border-collapse: collapse;
-	width: 100%;
-	overflow-x: auto;
 }
 
 th {
@@ -274,4 +272,9 @@ header{
     font-weight: 550;
 	text-wrap: wrap;
 	overflow-wrap: break-word;
+}
+.overall-table {
+	border-collapse: collapse;
+	width: 100%;
+	overflow-x: auto;
 }
